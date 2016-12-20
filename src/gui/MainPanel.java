@@ -58,7 +58,6 @@ public class MainPanel extends JFrame{
 
                 this.setFocusable(true);
                 this.requestFocusInWindow();
-
             }
 
             private void moveRect(char key)
@@ -75,9 +74,6 @@ public class MainPanel extends JFrame{
                 g.drawString(mouseButton, 10, 10);
             }
         }
-
-
-
 
         setContentPane(new ContentPanel());
         setVisible(true);
