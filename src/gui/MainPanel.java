@@ -6,6 +6,9 @@ import java.awt.*;
 
 public class MainPanel extends JFrame{
 
+    private JPanel p;
+    JPanel innerPanelLeft;
+    JPanel innerPanelRight;
 
     public MainPanel()
     {
@@ -16,30 +19,11 @@ public class MainPanel extends JFrame{
 
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (UnsupportedLookAndFeelException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
-        JPanel p = new JPanel(null);
-
-        JButton bMDrive = new JButton("Manual Drive");
-
-        bMDrive.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Manual drive enabled");
-            }
-        });
-
-        bMDrive.setBounds(100,100,150,30);
-
-        p.add(bMDrive);
+        initComponents();
 
         setContentPane(p);
         setVisible(true);
@@ -49,11 +33,43 @@ public class MainPanel extends JFrame{
                 super.componentResized(e);
 
                 System.out.println("Resize to " + getWidth() + "x" + getHeight());
+                p.repaint();
             }
         });
     }
 
     private void initComponents(){
 
+        p = new JPanel(new FlowLayout());
+        innerPanelLeft = new JPanel(new GridLayout(2,2, 10, 10));
+        innerPanelRight = new JPanel();
+
+        innerPanelLeft.setBackground(Color.LIGHT_GRAY);
+        innerPanelRight.setBackground(Color.LIGHT_GRAY);
+
+        JTextField txtFrom = new JTextField();
+
+        JTextField txtTo = new JTextField();
+
+        innerPanelLeft.add(new JLabel("Van:"));
+        innerPanelLeft.add(txtFrom);
+        innerPanelLeft.add(new JLabel("Naar:"));
+        innerPanelLeft.add(txtTo);
+
+        p.add(innerPanelLeft);
+        p.add(innerPanelRight);
+
+//        JButton bMDrive = new JButton("Manual Drive");
+//
+//        bMDrive.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                System.out.println("Manual drive enabled");
+//            }
+//        });
+//
+//        bMDrive.setBounds(getSize().width / 2,100,150,30);
+//
+//        p.add(bMDrive);
     }
 }
