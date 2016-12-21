@@ -1,20 +1,31 @@
 package gui;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Stijn on 21-12-2016.
  */
 public class MainPanel {
-    private JPanel panel;
-    private JPanel leftPanel;
-    private JPanel rightPanel;
-    private JTextField textField3;
-    private JTextField textField4;
-    private JButton rijRouteButton;
-    private JButton handmatigeBeturingButton;
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
+    public  JPanel MainP;
+    private  JPanel leftPanel;
+    private  JPanel rightPanel;
+    private  JTextField txtToX;
+    private  JTextField txtToY;
+    private  JButton btnDrive;
+    private  JButton btnM_Drive;
+    private  JTextField txtFromX;
+    private  JTextField txtFromY;
+
+    public MainPanel(){}
+
+    public JButton getBtnDrive() {
+        return btnDrive;
+    }
+
+    public static void setTxtFromX(JTextField txtFromX) {
+        txtFromX = txtFromX;
     }
 }
