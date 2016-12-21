@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="gui.MainPanel">
+  <grid id="27dc6" binding="panel" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="425" height="146"/>
+    </constraints>
+    <properties>
+      <minimumSize width="375" height="135"/>
+      <opaque value="true"/>
+      <preferredSize width="375" height="135"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="22fd5" binding="leftPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints border-constraint="West"/>
+        <properties/>
+        <border type="etched" title="Rijden over grid"/>
+        <children>
+          <grid id="7ceda" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints border-constraint="South"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <grid id="b9016" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                <constraints/>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="59e16" class="javax.swing.JLabel">
+                    <constraints/>
+                    <properties>
+                      <preferredSize width="35" height="35"/>
+                      <text value="Naar:"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="5d6fe" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                <constraints/>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="345ae" class="javax.swing.JLabel">
+                    <constraints/>
+                    <properties>
+                      <text value="X:"/>
+                    </properties>
+                  </component>
+                  <component id="9a255" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+                    <constraints/>
+                    <properties>
+                      <minimumSize width="40" height="35"/>
+                      <preferredSize width="40" height="35"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="ed25b" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                <constraints/>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="71729" class="javax.swing.JLabel">
+                    <constraints/>
+                    <properties>
+                      <text value="Y"/>
+                    </properties>
+                  </component>
+                  <component id="a4a2d" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+                    <constraints/>
+                    <properties>
+                      <minimumSize width="40" height="35"/>
+                      <preferredSize width="40" height="35"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+            </children>
+          </grid>
+          <grid id="bde49" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints border-constraint="North"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <grid id="e4740" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                <constraints/>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="692c0" class="javax.swing.JLabel">
+                    <constraints/>
+                    <properties>
+                      <preferredSize width="28" height="35"/>
+                      <text value="Van:"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="f3811" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                <constraints/>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="48372" class="javax.swing.JLabel">
+                    <constraints/>
+                    <properties>
+                      <text value="X:"/>
+                    </properties>
+                  </component>
+                  <component id="dfe09" class="javax.swing.JTextField" default-binding="true">
+                    <constraints/>
+                    <properties>
+                      <minimumSize width="40" height="35"/>
+                      <preferredSize width="40" height="35"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="f729" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                <constraints/>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="c1f87" class="javax.swing.JLabel">
+                    <constraints/>
+                    <properties>
+                      <text value="Y:"/>
+                    </properties>
+                  </component>
+                  <component id="91808" class="javax.swing.JTextField" default-binding="true">
+                    <constraints/>
+                    <properties>
+                      <minimumSize width="40" height="35"/>
+                      <preferredSize width="40" height="35"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <grid id="4e449" binding="rightPanel" layout-manager="GridBagLayout">
+        <constraints border-constraint="Center"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <grid id="b3081" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="fc417" class="javax.swing.JButton" binding="rijRouteButton" default-binding="true">
+                <constraints/>
+                <properties>
+                  <text value="Rij route"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <hspacer id="d8a47">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+          </hspacer>
+          <vspacer id="8361e">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+          </vspacer>
+          <grid id="1e61d" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="e8824" class="javax.swing.JButton" binding="handmatigeBeturingButton" default-binding="true">
+                <constraints/>
+                <properties>
+                  <text value="Handmatige beturing"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+    </children>
+  </grid>
+  <inspectionSuppressions>
+    <suppress inspection="SpellCheckingInspection" id="22fd5"/>
+  </inspectionSuppressions>
+</form>
