@@ -9,6 +9,8 @@ public class BTConnection {
     InputStream in;
     OutputStream out;
 
+    private int oldData = -1;
+
     boolean available;
 
     public BTConnection()
@@ -41,13 +43,14 @@ public class BTConnection {
     }
 
     public void sendData(int data) {
-        try {
-            out.write(data);
-            in.read();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        if(data != oldData)
+            try {
+                out.write(data);
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        oldData = data;
     }
 
     public int receiveData()

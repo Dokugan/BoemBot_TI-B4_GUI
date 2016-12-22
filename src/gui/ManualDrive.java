@@ -3,7 +3,7 @@ import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
 
-public class ManualDrive extends JFrame{
+public class ManualDrive extends JFrame implements Runnable{
     private JPanel mainPanel;
     private JButton btnRight;
     private JButton btnForward;
@@ -13,6 +13,8 @@ public class ManualDrive extends JFrame{
     private boolean breakUpdate = false;
 
     private final Set<Integer> pressed = new HashSet<Integer>();
+
+    Thread t;
 
     public ManualDrive() {
         super("Handmatig besturen");
@@ -79,40 +81,49 @@ public class ManualDrive extends JFrame{
             }
         });
 
-        update();
+        t = new Thread(this, "t1");
+        t.start();
     }
 
-    private void update()
+    public void run()
     {
-        while (!breakUpdate){
 
-            if(pressed.size() == 1)
+        while (!breakUpdate){
+            try
             {
-                if(pressed.contains(KeyEvent.VK_S))
-                    Main.conn.sendData(0);
-                if(pressed.contains(KeyEvent.VK_D))
-                    Main.conn.sendData(2);
-                if(pressed.contains(KeyEvent.VK_W))
-                    Main.conn.sendData(4);
-                if(pressed.contains(KeyEvent.VK_A))
-                    Main.conn.sendData(6);
-                if(pressed.contains(KeyEvent.VK_8))
-                    Main.conn.sendData(10);
-                if(pressed.contains(KeyEvent.VK_NUMPAD8))
-                    Main.conn.sendData(12);
+                if(pressed.size() == 1)
+                {
+                    if(pressed.contains(KeyEvent.VK_S))
+                        Main.conn.sendData(0);
+                    if(pressed.contains(KeyEvent.VK_D))
+                        Main.conn.sendData(2);
+                    if(pressed.contains(KeyEvent.VK_W))
+                        Main.conn.sendData(4);
+                    if(pressed.contains(KeyEvent.VK_A))
+                        Main.conn.sendData(6);
+                    if(pressed.contains(KeyEvent.VK_8))
+                        Main.conn.sendData(10);
+                    if(pressed.contains(KeyEvent.VK_NUMPAD8))
+                        Main.conn.sendData(12);
+                }
+                else if(pressed.size() == 2)
+                {
+                    if(pressed.contains(KeyEvent.VK_S) && pressed.contains(KeyEvent.VK_A))
+                        Main.conn.sendData(1);
+                    if(pressed.contains(KeyEvent.VK_A) && pressed.contains(KeyEvent.VK_W))
+                        Main.conn.sendData(3);
+                    if(pressed.contains(KeyEvent.VK_W) && pressed.contains(KeyEvent.VK_D))
+                        Main.conn.sendData(5);
+                    if(pressed.contains(KeyEvent.VK_D) && pressed.contains(KeyEvent.VK_S))
+                        Main.conn.sendData(7);
+                }
+                else Main.conn.sendData(255);
+
+
+                    Thread.sleep(10);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
             }
-            else if(pressed.size() == 2)
-            {
-                if(pressed.contains(KeyEvent.VK_S) && pressed.contains(KeyEvent.VK_A))
-                    Main.conn.sendData(1);
-                if(pressed.contains(KeyEvent.VK_A) && pressed.contains(KeyEvent.VK_W))
-                    Main.conn.sendData(3);
-                if(pressed.contains(KeyEvent.VK_W) && pressed.contains(KeyEvent.VK_D))
-                    Main.conn.sendData(5);
-                if(pressed.contains(KeyEvent.VK_D) && pressed.contains(KeyEvent.VK_S))
-                    Main.conn.sendData(7);
-            }
-            else Main.conn.sendData(255);
         }
     }
 }
