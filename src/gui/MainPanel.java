@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by Stijn on 21-12-2016.
  */
-public class MainPanel {
+public class MainPanel extends JFrame{
 
     public  JPanel MainP;
     private  JPanel leftPanel;
@@ -19,13 +19,18 @@ public class MainPanel {
     private  JTextField txtFromX;
     private  JTextField txtFromY;
 
-    public MainPanel(){}
+    public MainPanel() {
+        super("");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setContentPane(MainP);
+        pack();
 
-    public JButton getBtnDrive() {
-        return btnDrive;
-    }
-
-    public static void setTxtFromX(JTextField txtFromX) {
-        txtFromX = txtFromX;
+        setVisible(true);
+        btnDrive.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtFromX.setText("test");
+            }
+        });
     }
 }
