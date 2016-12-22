@@ -4,9 +4,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * Created by Stijn on 21-12-2016.
- */
 public class MainPanel extends JFrame{
 
     public  JPanel MainP;
@@ -30,6 +27,13 @@ public class MainPanel extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 txtFromX.setText("test");
+            }
+        });
+
+        btnM_Drive.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame m_Drive = new ManualDrive();
             }
         });
     }

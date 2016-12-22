@@ -3,9 +3,7 @@ package bluetooth;
 
 import gnu.io.*;
 import java.io.*;
-/**
- * Created by Stijn on 22-12-2016.
- */
+
 public class BTConnection {
 
     InputStream in;
@@ -42,15 +40,24 @@ public class BTConnection {
         }
     }
 
-    public void sendData(int data)
-    {
-        {
-            try {
-                out.write(data);
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
+    public void sendData(int data) {
+        try {
+            out.write(data);
+            in.read();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
         }
+    }
+
+    public int receiveData()
+    {
+        try {
+            return in.read();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return -1;
     }
 }
