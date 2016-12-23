@@ -11,37 +11,27 @@ import java.awt.geom.PathIterator;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.util.*;
-/**
- * Created by Stijn on 23-12-2016.
- */
+
 public class GridPanel extends JPanel {
 
-    int posx;
-    int posy;
+    private int posx = 0;
+    private int posy = 0;
+    private int vSpacing;
+    private int hSpacing;
+    private int height;
+    private int width;
+    int hLines = 6; //ammount of lines -1
+    int vLines = 6; // ammount of lines -1
 
     public GridPanel() {
         super();
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
-//        addMouseListener(new MouseAdapter() {
-//            @Override
-//            public void mousePressed(MouseEvent e) {
-//                super.mousePressed(e);
-//            }
-//
-//            @Override
-//            public void mouseReleased(MouseEvent e) {
-//                super.mouseReleased(e);
-//            }
-//        });
+        setFocusable(true);
 
-        addMouseMotionListener(new MouseMotionAdapter() {
+        addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseDragged(MouseEvent e) {
-                posx = e.getX();
-                posy = e.getY();
-
-                repaint();
+            public void mouseClicked(MouseEvent e) {
             }
         });
     }
@@ -49,9 +39,25 @@ public class GridPanel extends JPanel {
     @Override
     public void paintComponent(Graphics g)
     {
-        //super.paintComponent(g);
+        super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
 
-        g2d.drawOval(posx,posy,5,5);
+        width = getWidth();
+        height = getHeight();
+
+        hSpacing = width / vLines;
+        vSpacing = height / hLines;
+
+        //drawing horizontal lines
+        for(int i = 0; i < hLines; i++){
+            g2d.drawLine(posx, posy + (vSpacing * i), posx + width, posy + (vSpacing * i));
+
+        }
+
+        //drawing vertical lines
+        for(int i = 0; i < vLines; i++){
+            g2d.drawLine(posx + (hSpacing * i), posy, posx + (hSpacing * i), posy + height);
+
+        }
     }
 }

@@ -7,24 +7,24 @@
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="cdabf" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
-        <constraints border-constraint="West"/>
-        <properties/>
-        <border type="none"/>
+      <grid id="cdabf" layout-manager="CardLayout" hgap="0" vgap="0">
+        <constraints border-constraint="Center"/>
+        <properties>
+          <focusable value="false"/>
+          <preferredSize width="700" height="500"/>
+        </properties>
+        <border type="etched"/>
         <children>
-          <hspacer id="ed089">
-            <constraints/>
-          </hspacer>
-          <component id="42a61" class="gui.GridPanel">
-            <constraints/>
-            <properties>
-              <preferredSize width="700" height="500"/>
-            </properties>
+          <component id="40b84" class="gui.GridPanel">
+            <constraints>
+              <card name="Card1"/>
+            </constraints>
+            <properties/>
           </component>
         </children>
       </grid>
       <grid id="e0" layout-manager="BorderLayout" hgap="0" vgap="0">
-        <constraints border-constraint="Center"/>
+        <constraints border-constraint="East"/>
         <properties/>
         <border type="none"/>
         <children>
@@ -173,6 +173,7 @@
                   <gridbag weightx="0.0" weighty="0.0"/>
                 </constraints>
                 <properties>
+                  <focusable value="false"/>
                   <text value="Rijdt route"/>
                 </properties>
               </component>
@@ -222,6 +223,9 @@
       <vspacer id="26a22">
         <constraints border-constraint="North"/>
       </vspacer>
+      <hspacer id="cfac7">
+        <constraints border-constraint="West"/>
+      </hspacer>
     </children>
   </grid>
 </form>
