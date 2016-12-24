@@ -28,9 +28,13 @@ public class GridPanel extends JPanel {
             public void mouseClicked(MouseEvent e) {
                 System.out.println(e.getX() + " " + e.getY());
                 String inputTo = "";
-                inputTo = inputTo + checkMouseX(e.getX());
-                inputTo = inputTo + " , ";
-                inputTo = inputTo + checkMouseY(e.getY());
+                int x = checkMouseX(e.getX());
+                int y = checkMouseY(e.getY());
+                if(x != -1 && y != -1) {
+                    inputTo = inputTo + checkMouseX(e.getX());
+                    inputTo = inputTo + " , ";
+                    inputTo = inputTo + checkMouseY(e.getY());
+                }
 
                 Main.mp.txtTo.setText(inputTo);
             }
@@ -38,7 +42,7 @@ public class GridPanel extends JPanel {
             private int checkMouseX(int mouseX){
                 posx = 0;
 
-                for(int i = 0; i < hLines; i++)
+                for(int i = 0; i < vLines -1; i++)
                 {
                     if((mouseX > (posx + hSpacing / 2 ) && (mouseX < posx + (hSpacing * 1.5)))){
                         return i;
@@ -51,7 +55,7 @@ public class GridPanel extends JPanel {
             private int checkMouseY(int mouseY){
                 posy = 0;
 
-                for(int i = 0; i < vLines; i++)
+                for(int i = 0; i < hLines -1; i++)
                 {
                     if((mouseY > (posy + vSpacing / 2 ) && (mouseY < posy + (vSpacing * 1.5)))){
                         return i;
@@ -68,6 +72,9 @@ public class GridPanel extends JPanel {
     {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
+
+        posx = 0;
+        posy = 0;
 
         width = getWidth();
         height = getHeight();
