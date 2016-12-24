@@ -6,18 +6,22 @@ import java.awt.event.*;
 
 public class GridPanel extends JPanel {
 
+    private boolean drawSelected = false;
+    private String inputTo = "";
     private int posx = 0;
     private int posy = 0;
+    int selectedX;
+    int selectedY;
     private int vSpacing;
     private int hSpacing;
     private int height;
     private int width;
-    int hLines = 9; //ammount of lines -1
-    int vLines = 7; // ammount of lines -1
+    int hLines = 4; //ammount of lines -1
+    int vLines = 4; // ammount of lines -1
 
     public GridPanel() {
         super();
-        setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        //setBorder(BorderFactory.createLineBorder(Color.RED));
 
         setBackground(Color.WHITE);
 
@@ -25,15 +29,18 @@ public class GridPanel extends JPanel {
 
         addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mousePressed(MouseEvent e) {
+
                 System.out.println(e.getX() + " " + e.getY());
-                String inputTo = "";
-                int x = checkMouseX(e.getX());
-                int y = checkMouseY(e.getY());
-                if(x != -1 && y != -1) {
-                    inputTo = inputTo + checkMouseX(e.getX());
+                selectedX = checkMouseX(e.getX());
+                selectedY = checkMouseY(e.getY());
+                if(selectedX != -1 && selectedY != -1) {
+                    inputTo = "";
+                    inputTo = inputTo + selectedX;
                     inputTo = inputTo + " , ";
-                    inputTo = inputTo + checkMouseY(e.getY());
+                    inputTo = inputTo + selectedY;
+                    drawSelected = true;
+                    repaint();
                 }
 
                 Main.mp.txtTo.setText(inputTo);
@@ -83,13 +90,26 @@ public class GridPanel extends JPanel {
         vSpacing = height / hLines;
 
         //drawing horizontal lines
-        for(int i = 0; i < hLines; i++){
+        for(int i = 1; i < hLines; i++){
+            g2d.setStroke(new BasicStroke(3));
             g2d.drawLine(posx, posy + (vSpacing * i), posx + width, posy + (vSpacing * i));
         }
 
         //drawing vertical lines
-        for(int i = 0; i < vLines; i++){
+        for(int i = 1; i < vLines; i++){
+            g2d.setStroke(new BasicStroke(3));
             g2d.drawLine(posx + (hSpacing * i), posy, posx + (hSpacing * i), posy + height);
+        }
+
+        int markerSize = hSpacing / 8;
+
+        //drawing selected position
+        if(drawSelected){
+            g.setColor(Color.BLUE);
+            g.fillOval(hSpacing * (selectedX + 1)  - markerSize / 2, vSpacing * (selectedY + 1) - markerSize / 2, markerSize,markerSize);
+
+            g2d.setFont(new Font("Calibri", Font.LAYOUT_LEFT_TO_RIGHT ,hSpacing / 5));
+            g2d.drawString(inputTo, hSpacing * (selectedX + 1) + markerSize / 2, vSpacing * (selectedY + 1) + (int)(1.5 * markerSize));
         }
     }
 }

@@ -18,21 +18,20 @@ public class MainPanel extends JFrame {
     private JButton btnM_Drive;
     private JButton btnGo;
     private JButton btnStop;
+    private JButton btnTo;
+    private JButton btnVia1;
 
     MainPanel() {
         super("BoemBot control panel");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        class MyGraphics extends JComponent {
-            MyGraphics() {super();}
-        }
+        setMinimumSize(new Dimension(550, 410));
 
         setContentPane(mainPanel);
         pack();
         setVisible(true);
+
     }
-
-
 }
 
 
