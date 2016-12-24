@@ -11,8 +11,8 @@ public class MainPanel extends JFrame {
 
     private JPanel mainPanel;
     private JComboBox cboxSelectBB;
-    private JTextField txtTo;
-    private JTextField txtVia;
+    public JTextField txtTo;
+    public JTextField txtVia;
     private JButton btnAddVia;
     private JButton btnHome;
     private JButton btnM_Drive;
@@ -35,4 +35,8 @@ public class MainPanel extends JFrame {
         //panelGrid.add(new MyGraphics());
         setVisible(true);
     }
+
+
 }
+
+

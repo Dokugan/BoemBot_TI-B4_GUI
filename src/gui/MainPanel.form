@@ -15,7 +15,7 @@
         </properties>
         <border type="etched"/>
         <children>
-          <component id="40b84" class="gui.GridPanel">
+          <component id="4d5df" class="gui.GridPanel">
             <constraints>
               <card name="Card1"/>
             </constraints>
