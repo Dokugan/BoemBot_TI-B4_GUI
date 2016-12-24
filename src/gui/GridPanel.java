@@ -1,12 +1,16 @@
 package gui;
 
+import sun.plugin2.message.Message;
+import sun.plugin2.message.Serializer;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 
 public class GridPanel extends JPanel {
 
-    private boolean drawSelected = false;
+    public boolean drawSelected = false;
     private String inputToX = "";
     private String inputToY = "";
     private int posx = 0;
@@ -17,12 +21,11 @@ public class GridPanel extends JPanel {
     private int hSpacing;
     private int height;
     private int width;
-    int hLines = 4; //ammount of lines -1
-    int vLines = 4; // ammount of lines -1
+    int hLines = 9; //ammount of lines -1
+    int vLines = 7; // ammount of lines -1
 
     public GridPanel() {
         super();
-        //setBorder(BorderFactory.createLineBorder(Color.RED));
 
         setBackground(Color.WHITE);
 
@@ -115,12 +118,18 @@ public class GridPanel extends JPanel {
 
         //drawing selected position
         if(drawSelected){
-            g.setColor(Color.BLUE);
-            g.fillOval(hSpacing * (selectedX + 1)  - markerSize / 2, vSpacing * (selectedY + 1) - markerSize / 2, markerSize,markerSize);
+            try {
+                g.setColor(Color.BLUE);
+                g.fillOval(hSpacing * (selectedX + 1) - markerSize / 2, vSpacing * (selectedY + 1) - markerSize / 2, markerSize, markerSize);
 
-            g2d.setFont(new Font("Calibri", Font.LAYOUT_LEFT_TO_RIGHT ,hSpacing / 5));
-            String inputTo = inputToX + " , " + inputToY;
-            g2d.drawString(inputTo, hSpacing * (selectedX + 1) + markerSize / 2, vSpacing * (selectedY + 1) + (int)(1.5 * markerSize));
+
+                g2d.setFont(new Font("Calibri", Font.LAYOUT_LEFT_TO_RIGHT, hSpacing / 5));
+                g2d.drawString(selectedX + " , " + selectedY, hSpacing * (selectedX + 1) + markerSize / 2, vSpacing * (selectedY + 1) + (int) (1.5 * markerSize));
+
+            } catch (NumberFormatException e){
+
+                System.out.println("error");
+            }
         }
     }
 }

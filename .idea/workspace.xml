@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8852883b-f742-4688-8c59-529168017bca" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/gui/MainPanel.class" afterPath="$PROJECT_DIR$/output/gui/MainPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GridPanel.java" afterPath="$PROJECT_DIR$/src/gui/GridPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/MainPanel.form" afterPath="$PROJECT_DIR$/src/gui/MainPanel.form" />
@@ -32,11 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainPanel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gui/MainPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+            <state relative-caret-position="252">
+              <caret line="35" column="39" lean-forward="false" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,7 +43,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainPanel.form" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainPanel.form" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/MainPanel.form">
           <provider selected="true" editor-type-id="ui-designer">
             <state />
@@ -54,8 +53,8 @@
       <file leaf-file-name="GridPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/GridPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="47" column="30" lean-forward="false" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
+            <state relative-caret-position="487">
+              <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,9 +83,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/gui/Main.java" />
-        <option value="$PROJECT_DIR$/src/gui/MainPanel.java" />
-        <option value="$PROJECT_DIR$/src/gui/GridPanel.java" />
         <option value="$PROJECT_DIR$/src/gui/MainPanel.form" />
+        <option value="$PROJECT_DIR$/src/gui/GridPanel.java" />
+        <option value="$PROJECT_DIR$/src/gui/MainPanel.java" />
       </list>
     </option>
   </component>
@@ -461,7 +460,14 @@
       <option name="project" value="LOCAL" />
       <updated>1482539883657</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="+ Added generated JavaDoc(incomplete).&#10;&gt; Divided Coordinate input into X and Y.">
+      <created>1482601172167</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1482601172167</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -504,7 +510,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="basic stuff set up" />
     <MESSAGE value="+ Added mouse coördinate selection" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ Added mouse coördinate selection" />
+    <MESSAGE value="+ Added generated JavaDoc(incomplete).&#10;&gt; Divided Coordinate input into X and Y." />
+    <option name="LAST_COMMIT_MESSAGE" value="+ Added generated JavaDoc(incomplete).&#10;&gt; Divided Coordinate input into X and Y." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -799,26 +806,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/MainPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GridPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="47" column="30" lean-forward="false" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/MainPanel.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
@@ -827,6 +814,26 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/GridPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/MainPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="35" column="39" lean-forward="false" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
