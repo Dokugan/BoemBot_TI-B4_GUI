@@ -25,14 +25,10 @@ public class MainPanel extends JFrame {
 
         class MyGraphics extends JComponent {
             MyGraphics() {super();}
-
-
         }
 
         setContentPane(mainPanel);
-
         pack();
-        //panelGrid.add(new MyGraphics());
         setVisible(true);
     }
 

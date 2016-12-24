@@ -78,13 +78,11 @@ public class GridPanel extends JPanel {
         //drawing horizontal lines
         for(int i = 0; i < hLines; i++){
             g2d.drawLine(posx, posy + (vSpacing * i), posx + width, posy + (vSpacing * i));
-
         }
 
         //drawing vertical lines
         for(int i = 0; i < vLines; i++){
             g2d.drawLine(posx + (hSpacing * i), posy, posx + (hSpacing * i), posy + height);
-
         }
     }
 }
