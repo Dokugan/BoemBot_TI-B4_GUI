@@ -7,7 +7,8 @@ import java.awt.event.*;
 public class GridPanel extends JPanel {
 
     private boolean drawSelected = false;
-    private String inputTo = "";
+    private String inputToX = "";
+    private String inputToY = "";
     private int posx = 0;
     private int posy = 0;
     int selectedX;
@@ -35,17 +36,22 @@ public class GridPanel extends JPanel {
                 selectedX = checkMouseX(e.getX());
                 selectedY = checkMouseY(e.getY());
                 if(selectedX != -1 && selectedY != -1) {
-                    inputTo = "";
-                    inputTo = inputTo + selectedX;
-                    inputTo = inputTo + " , ";
-                    inputTo = inputTo + selectedY;
+                    inputToX = "";
+                    inputToY = "";
+                    inputToX += selectedX;
+                    inputToY += selectedY;
                     drawSelected = true;
                     repaint();
                 }
 
-                Main.mp.txtTo.setText(inputTo);
+                Main.mp.txtToX.setText(inputToX);
+                Main.mp.txtToY.setText(inputToY);
             }
 
+            /**
+            @param mouseX   The X coordinate of the mouse relative to the GridPanel.
+            @return         X coordinatie of the grid coresponding to the X position of the mouse.
+            */
             private int checkMouseX(int mouseX){
                 posx = 0;
 
@@ -59,6 +65,10 @@ public class GridPanel extends JPanel {
                 return -1;
             }
 
+            /**
+             @param mouseY   The Y coordinate of the mouse relative to the GridPanel.
+             @return         Y coordinatie of the grid coresponding to the Y position of the mouse.
+             */
             private int checkMouseY(int mouseY){
                 posy = 0;
 
@@ -109,6 +119,7 @@ public class GridPanel extends JPanel {
             g.fillOval(hSpacing * (selectedX + 1)  - markerSize / 2, vSpacing * (selectedY + 1) - markerSize / 2, markerSize,markerSize);
 
             g2d.setFont(new Font("Calibri", Font.LAYOUT_LEFT_TO_RIGHT ,hSpacing / 5));
+            String inputTo = inputToX + " , " + inputToY;
             g2d.drawString(inputTo, hSpacing * (selectedX + 1) + markerSize / 2, vSpacing * (selectedY + 1) + (int)(1.5 * markerSize));
         }
     }
