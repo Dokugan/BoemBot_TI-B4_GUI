@@ -22,59 +22,75 @@ public class MainPanel extends JFrame {
     public JTextField txtToX;
     public JTextField txtToY;
     private GridPanel gridPanel;
+    private JMenuBar menuBar;
+    private JMenu menuBoeBot;
+    private JMenu menuFile;
 
     MainPanel() {
         super("BoemBot control panel");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         setMinimumSize(new Dimension(550, 410));
 
-        txtToX.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    gridPanel.selectedX = Integer.parseInt(txtToX.getText());
-                    gridPanel.selectedY = Integer.parseInt(txtToY.getText());
+        txtToX.addActionListener((ActionEvent e) -> {
+            try {
+                gridPanel.selectedX = Integer.parseInt(txtToX.getText());
+                gridPanel.selectedY = Integer.parseInt(txtToY.getText());
 
-                    if(gridPanel.selectedX < gridPanel.vLines - 1 && gridPanel.selectedY < gridPanel.hLines - 1) {
-                        gridPanel.drawSelected = true;
-                        gridPanel.repaint();
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(null, "Coördinaat(en) buiten veld");
-                    }
-                }catch(NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(null, "Geen geldige invoer");
+                if(gridPanel.selectedX < gridPanel.vLines - 1 && gridPanel.selectedY < gridPanel.hLines - 1) {
+                    gridPanel.drawSelected = true;
+                    gridPanel.repaint();
                 }
-            }
-        });
-
-        txtToY.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    gridPanel.selectedX = Integer.parseInt(txtToX.getText());
-                    gridPanel.selectedY = Integer.parseInt(txtToY.getText());
-
-                    if(gridPanel.selectedX < gridPanel.vLines - 1 && gridPanel.selectedY < gridPanel.hLines - 1) {
-                        gridPanel.drawSelected = true;
-                        gridPanel.repaint();
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(null, "Coördinaat(en) buiten veld");
-                    }
-                }catch(NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(null, "Geen geldige invoer");
+                else{
+                    JOptionPane.showMessageDialog(null, "Coördinaat(en) buiten veld");
                 }
+            }catch(NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Geen geldige invoer");
             }
         });
 
-        btnM_Drive.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new ManualDrive();
+        txtToY.addActionListener((ActionEvent e) -> {
+            try {
+                gridPanel.selectedX = Integer.parseInt(txtToX.getText());
+                gridPanel.selectedY = Integer.parseInt(txtToY.getText());
+
+                if(gridPanel.selectedX < gridPanel.vLines - 1 && gridPanel.selectedY < gridPanel.hLines - 1) {
+                    gridPanel.drawSelected = true;
+                    gridPanel.repaint();
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Coördinaat(en) buiten veld");
+                }
+            }catch(NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Geen geldige invoer");
             }
         });
+
+        btnM_Drive.addActionListener((ActionEvent e) -> new ManualDrive());
+
+        menuBar = new JMenuBar();
+        menuBoeBot = new JMenu("BoeBot");
+        menuFile = new JMenu("Bestand");
+
+        menuBar.add(menuFile);
+        menuBar.add(menuBoeBot);
+
+        JMenuItem itemSettings = new JMenuItem("Settings");
+        JMenuItem itemExit = new JMenuItem("Afsluiten");
+        itemExit.addActionListener(e -> {
+          System.exit(0);
+        });
+        menuFile.add(itemSettings);
+        menuFile.add(itemExit);
+
+        JMenuItem itemAddBB = new JMenuItem("Voeg BoeBot toe");
+        JMenuItem itemProperties = new JMenuItem("Eigenschappen");
+        JMenuItem itemDisconnectBB = new JMenuItem("Ontkoppel BoeBot");
+        menuBoeBot.add(itemAddBB);
+        menuBoeBot.add(itemProperties);
+        menuBoeBot.add(itemDisconnectBB);
+
+        setJMenuBar(menuBar);
 
         setContentPane(mainPanel);
         pack();
