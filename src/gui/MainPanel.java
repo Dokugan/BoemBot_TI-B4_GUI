@@ -35,21 +35,44 @@ public class MainPanel extends JFrame {
                 try {
                     gridPanel.selectedX = Integer.parseInt(txtToX.getText());
                     gridPanel.selectedY = Integer.parseInt(txtToY.getText());
-                }catch(NumberFormatException ex){
+
+                    if(gridPanel.selectedX < gridPanel.vLines - 1 && gridPanel.selectedY < gridPanel.hLines - 1) {
+                        gridPanel.drawSelected = true;
+                        gridPanel.repaint();
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "Coördinaat(en) buiten veld");
+                    }
+                }catch(NumberFormatException ex) {
                     JOptionPane.showMessageDialog(null, "Geen geldige invoer");
                 }
-                gridPanel.drawSelected = true;
-                gridPanel.repaint();
             }
         });
 
         txtToY.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gridPanel.selectedX = Integer.parseInt(txtToX.getText());
-                gridPanel.selectedY = Integer.parseInt(txtToY.getText());
-                gridPanel.drawSelected = true;
-                gridPanel.repaint();
+                try {
+                    gridPanel.selectedX = Integer.parseInt(txtToX.getText());
+                    gridPanel.selectedY = Integer.parseInt(txtToY.getText());
+
+                    if(gridPanel.selectedX < gridPanel.vLines - 1 && gridPanel.selectedY < gridPanel.hLines - 1) {
+                        gridPanel.drawSelected = true;
+                        gridPanel.repaint();
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "Coördinaat(en) buiten veld");
+                    }
+                }catch(NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(null, "Geen geldige invoer");
+                }
+            }
+        });
+
+        btnM_Drive.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new ManualDrive();
             }
         });
 
