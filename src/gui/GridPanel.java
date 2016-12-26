@@ -1,16 +1,12 @@
 package gui;
 
-import sun.plugin2.message.Message;
-import sun.plugin2.message.Serializer;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.IOException;
 
 public class GridPanel extends JPanel {
 
-    public boolean drawSelected = false;
+    boolean drawSelected = false;
     private String inputToX = "";
     private String inputToY = "";
     private int posx = 0;
@@ -118,18 +114,12 @@ public class GridPanel extends JPanel {
 
         //drawing selected position
         if(drawSelected){
-            try {
                 g.setColor(Color.BLUE);
                 g.fillOval(hSpacing * (selectedX + 1) - markerSize / 2, vSpacing * (selectedY + 1) - markerSize / 2, markerSize, markerSize);
 
 
-                g2d.setFont(new Font("Calibri", Font.LAYOUT_LEFT_TO_RIGHT, hSpacing / 5));
-                g2d.drawString(selectedX + " , " + selectedY, hSpacing * (selectedX + 1) + markerSize / 2, vSpacing * (selectedY + 1) + (int) (1.5 * markerSize));
-
-            } catch (NumberFormatException e){
-
-                System.out.println("error");
-            }
+                g2d.setFont(new Font("Arial", Font.LAYOUT_LEFT_TO_RIGHT, hSpacing / 5));
+                g2d.drawString(selectedX + "," + selectedY, hSpacing * (selectedX + 1) + markerSize / 2, vSpacing * (selectedY + 1) + (int) (1.5 * markerSize));
         }
     }
 }
