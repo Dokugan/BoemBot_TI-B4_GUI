@@ -52,6 +52,10 @@ public class BTConnection {
     public void setName(String name) {
         this.name = name;}
 
+    public void setHome(int xPos, int yPos) {
+        this.posx = xPos;
+        this.posy = yPos;}
+
     public String getName(){
         return this.name;}
 
@@ -61,9 +65,8 @@ public class BTConnection {
     public int getHomey() {
         return this.posy;}
 
-    public void setHome(int xPos, int yPos) {
-        this.posx = xPos;
-        this.posy = yPos;}
+    public String getPort(){
+        return comPort;}
 
     public void sendData(int data) {
         if(data != oldData)

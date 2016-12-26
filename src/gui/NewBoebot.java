@@ -48,6 +48,39 @@ public class NewBoebot extends JFrame implements Runnable{
         t.start();
     }
 
+    NewBoebot(String name, String port){
+        super("Nieuwe Boebot");
+
+        ports.add(port);
+        ports.add("Poorten laden...");
+        combPort.setModel(new DefaultComboBoxModel(ports.toArray()));
+
+        txtName.setText(name);
+
+        btnAdd.setText("Opslaan");
+        btnAdd.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //@TODO implement home position
+                try {
+                    Main.bots.add(new BTConnection(txtName.getText(), combPort.getSelectedItem().toString(), 0, 0));
+                    Main.mp.fillSelectedBBBox();
+                    NewBoebot.super.dispose();
+                }catch(NullPointerException ex){
+                    JOptionPane.showMessageDialog(null, "Velden niet juist ingevoerd");
+                }
+            }
+        });
+
+        setContentPane(mainPanel);
+        pack();
+        setVisible(true);
+
+        Thread t = new Thread(this, "t1");
+
+        t.start();
+    }
+
     public void run(){
         ListPorts.getPorts();
         combPort.setModel(new DefaultComboBoxModel(ports.toArray()));
