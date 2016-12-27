@@ -9,8 +9,10 @@ public class BTConnection {
     InputStream in;
     OutputStream out;
 
-    int posx;
-    int posy;
+    int currentPosx;
+    int currentPosy;
+    int homePosx;
+    int homePosy;
     String comPort;
     String name;
 
@@ -18,8 +20,10 @@ public class BTConnection {
 
     public BTConnection(String name, String port, int xHome, int yHome)
     {
-        this.posx = xHome;
-        this.posy = yHome;
+        this.homePosx = xHome;
+        this.homePosy = yHome;
+        this.currentPosx = xHome;
+        this.currentPosy = yHome;
         this.name = name;
         this.comPort = port;
 
@@ -53,17 +57,29 @@ public class BTConnection {
         this.name = name;}
 
     public void setHome(int xPos, int yPos) {
-        this.posx = xPos;
-        this.posy = yPos;}
+        this.homePosx = xPos;
+        this.homePosy = yPos;}
+
+    public void setCurrentPos(int posX, int posY){
+        this.currentPosx = posX;
+        this.currentPosy = posY;}
+
+    public int getCurrentPosy() {
+        return currentPosy;
+    }
+
+    public int getCurrentPosx() {
+        return currentPosx;
+    }
 
     public String getName(){
         return this.name;}
 
     public int getHomex() {
-        return this.posx;}
+        return this.homePosx;}
 
     public int getHomey() {
-        return this.posy;}
+        return this.homePosy;}
 
     public String getPort(){
         return comPort;}

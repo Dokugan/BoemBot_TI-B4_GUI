@@ -1,5 +1,7 @@
 package gui;
 
+import bluetooth.BTConnection;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -120,6 +122,15 @@ public class GridPanel extends JPanel {
 
                 g2d.setFont(new Font("Arial", Font.LAYOUT_LEFT_TO_RIGHT, hSpacing / 5));
                 g2d.drawString(selectedX + "," + selectedY, hSpacing * (selectedX + 1) + markerSize / 2, vSpacing * (selectedY + 1) + (int) (1.5 * markerSize));
+        }
+
+        for(BTConnection b : Main.bots)
+        {
+            g.setColor(new Color(3, 79, 0));
+            g.fillOval(hSpacing * (b.getCurrentPosx() +1) - markerSize / 2, vSpacing * (b.getCurrentPosy() + 1) - markerSize /2, markerSize,markerSize);
+
+            g2d.setFont(new Font("Arial", Font.LAYOUT_LEFT_TO_RIGHT, hSpacing / 5));
+            g2d.drawString(b.getName(), hSpacing * (b.getCurrentPosx() + 1) + markerSize / 2, vSpacing * (b.getCurrentPosy() + 1) + (int) (markerSize *1.5));
         }
     }
 }

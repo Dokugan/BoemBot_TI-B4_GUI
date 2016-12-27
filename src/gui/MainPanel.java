@@ -21,7 +21,7 @@ public class MainPanel extends JFrame {
     private JButton btnStop;
     private JButton btnTo;
     private JButton btnVia1;
-    private GridPanel gridPanel;
+    public GridPanel gridPanel;
     private JTextField txtViaX1;
     private JTextField txtViaY1;
     private JMenuBar menuBar;
@@ -93,10 +93,21 @@ public class MainPanel extends JFrame {
         itemAddBB.addActionListener(e -> newBoebotPanel = new NewBoebot());
 
         JMenuItem itemProperties = new JMenuItem("Eigenschappen");
-        itemProperties.addActionListener(e -> editBoeBotPanel = new NewBoebot(cboxSelectBB.getSelectedItem().toString(), getSelectedBB().getPort()));
+        itemProperties.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                editBoeBotPanel = new NewBoebot(MainPanel.this.getSelectedBB().getName(),
+                                                MainPanel.this.getSelectedBB().getPort(),
+                                                MainPanel.this.getSelectedBB().getHomex(),
+                                                MainPanel.this.getSelectedBB().getHomey());
+            }
+        });
 
         JMenuItem itemDisconnectBB = new JMenuItem("Ontkoppel BoeBot");
-        itemDisconnectBB.addActionListener(e -> Main.mp.getSelectedBB());
+        itemDisconnectBB.addActionListener((ActionEvent e) -> {
+           BTConnection b = getSelectedBB();
+           b = null;
+        });
 
         menuBoeBot.add(itemAddBB);
         menuBoeBot.add(itemProperties);
