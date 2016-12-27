@@ -8,13 +8,18 @@ import java.awt.event.*;
 
 public class GridPanel extends JPanel {
 
-    boolean drawSelected = false;
+    boolean drawSelectedTo = false;
+    boolean drawSelectedVia = false;
+    boolean btnToPressed = false;
+    boolean btnViaPressed = false;
     private String inputToX = "";
     private String inputToY = "";
     private int posx = 0;
     private int posy = 0;
-    int selectedX;
-    int selectedY;
+    int selectedToX;
+    int selectedToY;
+    int selectedViaX;
+    int selectedViaY;
     private int vSpacing;
     private int hSpacing;
     private int height;
@@ -33,20 +38,37 @@ public class GridPanel extends JPanel {
             @Override
             public void mousePressed(MouseEvent e) {
 
-                System.out.println(e.getX() + " " + e.getY());
-                selectedX = checkMouseX(e.getX());
-                selectedY = checkMouseY(e.getY());
-                if(selectedX != -1 && selectedY != -1) {
-                    inputToX = "";
-                    inputToY = "";
-                    inputToX += selectedX;
-                    inputToY += selectedY;
-                    drawSelected = true;
-                    repaint();
+                if (btnToPressed) {
+                    selectedToX = checkMouseX(e.getX());
+                    selectedToY = checkMouseY(e.getY());
+                    if(selectedToX != -1 && selectedToY != -1) {
+                        inputToX = "";
+                        inputToY = "";
+                        inputToX += selectedToX;
+                        inputToY += selectedToY;
+                        drawSelectedTo = true;
+                        repaint();
+                    }
+
+                    Main.mp.txtToX.setText(inputToX);
+                    Main.mp.txtToY.setText(inputToY);
                 }
 
-                Main.mp.txtToX.setText(inputToX);
-                Main.mp.txtToY.setText(inputToY);
+                if (btnViaPressed) {
+                    selectedViaX = checkMouseX(e.getX());
+                    selectedViaY = checkMouseY(e.getY());
+                    if(selectedViaX != -1 && selectedViaY != -1) {
+                        inputToX = "";
+                        inputToY = "";
+                        inputToX += selectedViaX;
+                        inputToY += selectedViaY;
+                        drawSelectedVia = true;
+                        repaint();
+                    }
+
+                    Main.mp.txtViaX0.setText(inputToX);
+                    Main.mp.txtViaY0.setText(inputToY);
+                }
             }
 
             /**
@@ -114,19 +136,32 @@ public class GridPanel extends JPanel {
 
         int markerSize = hSpacing / 8;
 
-        //drawing selected position
-        if(drawSelected){
-                g.setColor(Color.BLUE);
-                g.fillOval(hSpacing * (selectedX + 1) - markerSize / 2, vSpacing * (selectedY + 1) - markerSize / 2, markerSize, markerSize);
+        //drawing selected to position
+        if(drawSelectedTo){
+            g.setColor(Color.BLUE);
+            g.fillOval(hSpacing * (selectedToX + 1) - markerSize / 2, vSpacing * (selectedToY + 1) - markerSize / 2, markerSize, markerSize);
 
-
-                g2d.setFont(new Font("Arial", Font.LAYOUT_LEFT_TO_RIGHT, hSpacing / 5));
-                g2d.drawString(selectedX + "," + selectedY, hSpacing * (selectedX + 1) + markerSize / 2, vSpacing * (selectedY + 1) + (int) (1.5 * markerSize));
+            g2d.setFont(new Font("Arial", Font.LAYOUT_LEFT_TO_RIGHT, hSpacing / 5));
+            g2d.drawString(selectedToX + "," + selectedToY, hSpacing * (selectedToX + 1) + markerSize / 2, vSpacing * (selectedToY + 1) + (int) (1.5 * markerSize));
+            Main.mp.btnTo.setEnabled(true);
+            btnToPressed = false;
         }
 
+        //drawing selected via position
+        if(drawSelectedVia){
+            g.setColor(Color.BLUE);
+            g.fillRect(hSpacing * (selectedViaX + 1) - markerSize / 2, vSpacing * (selectedViaY + 1) - markerSize / 2, markerSize, markerSize);
+
+            g2d.setFont(new Font("Arial", Font.LAYOUT_LEFT_TO_RIGHT, hSpacing / 5));
+            g2d.drawString(selectedViaX + "," + selectedViaY, hSpacing * (selectedViaX + 1) + markerSize / 2, vSpacing * (selectedViaY + 1) + (int) (1.5 * markerSize));
+            Main.mp.btnVia1.setEnabled(true);
+            btnViaPressed = false;
+        }
+
+        //drawing Boembots
         for(BTConnection b : Main.bots)
         {
-            g.setColor(new Color(3, 79, 0));
+            g.setColor(new Color(3, 80, 0));
             g.fillOval(hSpacing * (b.getCurrentPosx() +1) - markerSize / 2, vSpacing * (b.getCurrentPosy() + 1) - markerSize /2, markerSize,markerSize);
 
             g2d.setFont(new Font("Arial", Font.LAYOUT_LEFT_TO_RIGHT, hSpacing / 5));

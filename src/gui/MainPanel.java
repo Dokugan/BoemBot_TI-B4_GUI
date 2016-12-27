@@ -19,17 +19,18 @@ public class MainPanel extends JFrame {
     private JButton btnM_Drive;
     private JButton btnGo;
     private JButton btnStop;
-    private JButton btnTo;
-    private JButton btnVia1;
+    public JButton btnTo;
+    public JButton btnVia1;
     public GridPanel gridPanel;
-    private JTextField txtViaX1;
-    private JTextField txtViaY1;
+    public JTextField txtViaX0;
+    public JTextField txtViaY0;
     private JMenuBar menuBar;
     private JMenu menuBoeBot;
     private JMenu menuFile;
     public NewBoebot editBoeBotPanel;
     public JTextField txtToX;
     public JTextField txtToY;
+    private JPanel panelVia;
     public NewBoebot newBoebotPanel;
 
     MainPanel() {
@@ -40,11 +41,11 @@ public class MainPanel extends JFrame {
 
         txtToX.addActionListener((ActionEvent e) -> {
             try {
-                gridPanel.selectedX = Integer.parseInt(txtToX.getText());
-                gridPanel.selectedY = Integer.parseInt(txtToY.getText());
+                gridPanel.selectedToX = Integer.parseInt(txtToX.getText());
+                gridPanel.selectedToY = Integer.parseInt(txtToY.getText());
 
-                if(gridPanel.selectedX < gridPanel.vLines - 1 && gridPanel.selectedY < gridPanel.hLines - 1) {
-                    gridPanel.drawSelected = true;
+                if(gridPanel.selectedToX < gridPanel.vLines - 1 && gridPanel.selectedToY < gridPanel.hLines - 1) {
+                    gridPanel.drawSelectedTo = true;
                     gridPanel.repaint();
                 }
                 else{
@@ -57,11 +58,11 @@ public class MainPanel extends JFrame {
 
         txtToY.addActionListener((ActionEvent e) -> {
             try {
-                gridPanel.selectedX = Integer.parseInt(txtToX.getText());
-                gridPanel.selectedY = Integer.parseInt(txtToY.getText());
+                gridPanel.selectedToX = Integer.parseInt(txtToX.getText());
+                gridPanel.selectedToY = Integer.parseInt(txtToY.getText());
 
-                if(gridPanel.selectedX < gridPanel.vLines - 1 && gridPanel.selectedY < gridPanel.hLines - 1) {
-                    gridPanel.drawSelected = true;
+                if(gridPanel.selectedToX < gridPanel.vLines - 1 && gridPanel.selectedToY < gridPanel.hLines - 1) {
+                    gridPanel.drawSelectedTo = true;
                     gridPanel.repaint();
                 }
                 else{
@@ -73,6 +74,15 @@ public class MainPanel extends JFrame {
         });
 
         btnM_Drive.addActionListener((ActionEvent e) -> new ManualDrive());
+
+        btnTo.addActionListener((ActionEvent e) -> {
+            this.gridPanel.btnToPressed = true;
+            this.btnTo.setEnabled(false);
+        });
+        btnVia1.addActionListener((ActionEvent e) -> {
+            this.gridPanel.btnViaPressed = true;
+            this.btnVia1.setEnabled(false);
+        });
 
         menuBar = new JMenuBar();
         menuBoeBot = new JMenu("BoeBot");
