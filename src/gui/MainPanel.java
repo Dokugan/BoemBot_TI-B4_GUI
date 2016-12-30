@@ -92,6 +92,12 @@ public class MainPanel extends JFrame {
         menuBar.add(menuBoeBot);
 
         JMenuItem itemSettings = new JMenuItem("Settings");
+        itemSettings.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new GridProperties();
+            }
+        });
         JMenuItem itemExit = new JMenuItem("Afsluiten");
         itemExit.addActionListener(e -> {
           System.exit(0);

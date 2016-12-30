@@ -106,10 +106,6 @@ public class ManualDrive extends JFrame implements Runnable {
                         Main.mp.getSelectedBB().sendData(4);
                     if (pressed.contains(KeyEvent.VK_A))
                         Main.mp.getSelectedBB().sendData(6);
-                    if (pressed.contains(KeyEvent.VK_8))
-                        Main.mp.getSelectedBB().sendData(10);
-                    if (pressed.contains(KeyEvent.VK_NUMPAD8))
-                        Main.mp.getSelectedBB().sendData(12);
                 } else if (pressed.size() == 2) {
                     if (pressed.contains(KeyEvent.VK_S) && pressed.contains(KeyEvent.VK_A))
                         Main.mp.getSelectedBB().sendData(1);
@@ -127,7 +123,6 @@ public class ManualDrive extends JFrame implements Runnable {
                 e.printStackTrace();
             }
         }
-        Main.mp.getSelectedBB().sendData(253);
     }
 
     {

@@ -25,7 +25,7 @@ public class GridPanel extends JPanel {
     private int height;
     private int width;
     int hLines = 9; //ammount of lines -1
-    int vLines = 7; // ammount of lines -1
+    int vLines = 11; // ammount of lines -1
 
     public GridPanel() {
         super();
@@ -119,8 +119,8 @@ public class GridPanel extends JPanel {
         width = getWidth();
         height = getHeight();
 
-        hSpacing = width / vLines;
-        vSpacing = height / hLines;
+        hSpacing = (int)Math.floor(width / vLines);
+        vSpacing = (int)Math.floor(height / hLines);
 
         //drawing horizontal lines
         for(int i = 1; i < hLines; i++){
@@ -162,7 +162,7 @@ public class GridPanel extends JPanel {
         for(BTConnection b : Main.bots)
         {
             g.setColor(new Color(3, 80, 0));
-            g.fillOval(hSpacing * (b.getCurrentPosx() +1) - markerSize / 2, vSpacing * (b.getCurrentPosy() + 1) - markerSize /2, markerSize,markerSize);
+            g2d.fillRoundRect(hSpacing * (b.getCurrentPosx() +1) - markerSize / 2, vSpacing * (b.getCurrentPosy() + 1) - markerSize /2, markerSize,markerSize,5,5);
 
             g2d.setFont(new Font("Arial", Font.LAYOUT_LEFT_TO_RIGHT, hSpacing / 5));
             g2d.drawString(b.getName(), hSpacing * (b.getCurrentPosx() + 1) + markerSize / 2, vSpacing * (b.getCurrentPosy() + 1) + (int) (markerSize *1.5));
