@@ -85,14 +85,12 @@ public class BTConnection {
         return comPort;}
 
     public void sendData(int data) {
-        if(data != oldData)
             try {
                 out.write(data);
             } catch (IOException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
-        oldData = data;
     }
 
     public int receiveData()

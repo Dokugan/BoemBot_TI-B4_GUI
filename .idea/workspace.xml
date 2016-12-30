@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8852883b-f742-4688-8c59-529168017bca" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/gui/GridProperties.form" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/gui/GridProperties.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GridPanel.java" afterPath="$PROJECT_DIR$/src/gui/GridPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bluetooth/BTConnection.java" afterPath="$PROJECT_DIR$/src/bluetooth/BTConnection.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/MainPanel.java" afterPath="$PROJECT_DIR$/src/gui/MainPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/ManualDrive.java" afterPath="$PROJECT_DIR$/src/gui/ManualDrive.java" />
     </list>
     <ignored path="$PROJECT_DIR$/output/" />
     <ignored path="/test/BoemBot_TI-B4_GUI/" />
@@ -24,22 +21,23 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="GridPanel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GridPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/GridPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+            <state relative-caret-position="561">
+              <caret line="37" column="21" lean-forward="true" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BTConnection.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BTConnection.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/bluetooth/BTConnection.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="298">
-              <caret line="66" column="33" lean-forward="false" selection-start-line="66" selection-start-column="33" selection-end-line="66" selection-end-column="33" />
+              <caret line="87" column="17" lean-forward="true" selection-start-line="87" selection-start-column="17" selection-end-line="87" selection-end-column="17" />
               <folding>
+                <element signature="e#1876#1877#0" expanded="true" />
                 <element signature="e#1910#1911#0" expanded="true" />
               </folding>
             </state>
@@ -49,11 +47,11 @@
       <file leaf-file-name="MainPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/MainPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="98" column="13" lean-forward="true" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
+            <state relative-caret-position="425">
+              <caret line="94" column="16" lean-forward="false" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="16" />
               <folding>
-                <element signature="e#3249#3250#0" expanded="true" />
-                <element signature="e#3301#3302#0" expanded="true" />
+                <element signature="e#3796#3797#0" expanded="true" />
+                <element signature="e#3848#3849#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -152,11 +150,12 @@
         <option value="$PROJECT_DIR$/src/gui/NewBoebot.java" />
         <option value="$PROJECT_DIR$/src/gui/NewBoebot.form" />
         <option value="$PROJECT_DIR$/src/gui/MainPanel.form" />
-        <option value="$PROJECT_DIR$/src/gui/MainPanel.java" />
         <option value="$PROJECT_DIR$/src/gui/GridProperties.form" />
         <option value="$PROJECT_DIR$/src/gui/ManualDrive.java" />
         <option value="$PROJECT_DIR$/src/gui/GridProperties.java" />
         <option value="$PROJECT_DIR$/src/gui/GridPanel.java" />
+        <option value="$PROJECT_DIR$/src/gui/MainPanel.java" />
+        <option value="$PROJECT_DIR$/src/bluetooth/BTConnection.java" />
       </list>
     </option>
   </component>
@@ -628,7 +627,14 @@
       <option name="project" value="LOCAL" />
       <updated>1482853418976</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="+ Added grid option pane where you can resize the grid">
+      <created>1483109865348</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1483109865348</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -675,7 +681,8 @@
     <MESSAGE value="+ Added manual drive.&#10;+ Added BlueTooth connection libraries.&#10;+ Added BlueTooth connection class.&#10;+ Added Error Messages to textfield coordinate input." />
     <MESSAGE value="+ Added a menubar" />
     <MESSAGE value="+ Added functionality for the to and via buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ Added functionality for the to and via buttons" />
+    <MESSAGE value="+ Added grid option pane where you can resize the grid" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ Added grid option pane where you can resize the grid" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -719,8 +726,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3249#3250#0" expanded="true" />
-            <element signature="e#3301#3302#0" expanded="true" />
+            <element signature="e#3796#3797#0" expanded="true" />
+            <element signature="e#3848#3849#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -753,8 +760,8 @@
         <state relative-caret-position="575">
           <caret line="25" column="35" lean-forward="false" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
           <folding>
-            <element signature="e#3249#3250#0" expanded="true" />
-            <element signature="e#3301#3302#0" expanded="true" />
+            <element signature="e#3796#3797#0" expanded="true" />
+            <element signature="e#3848#3849#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -790,8 +797,8 @@
         <state relative-caret-position="630">
           <caret line="30" column="15" lean-forward="false" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
           <folding>
-            <element signature="e#3249#3250#0" expanded="true" />
-            <element signature="e#3301#3302#0" expanded="true" />
+            <element signature="e#3796#3797#0" expanded="true" />
+            <element signature="e#3848#3849#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -827,8 +834,8 @@
         <state relative-caret-position="510">
           <caret line="30" column="15" lean-forward="false" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
           <folding>
-            <element signature="e#3249#3250#0" expanded="true" />
-            <element signature="e#3301#3302#0" expanded="true" />
+            <element signature="e#3796#3797#0" expanded="true" />
+            <element signature="e#3848#3849#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -864,8 +871,8 @@
         <state relative-caret-position="756">
           <caret line="36" column="5" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding>
-            <element signature="e#3249#3250#0" expanded="true" />
-            <element signature="e#3301#3302#0" expanded="true" />
+            <element signature="e#3796#3797#0" expanded="true" />
+            <element signature="e#3848#3849#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -898,8 +905,8 @@
         <state relative-caret-position="612">
           <caret line="36" column="5" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding>
-            <element signature="e#3249#3250#0" expanded="true" />
-            <element signature="e#3301#3302#0" expanded="true" />
+            <element signature="e#3796#3797#0" expanded="true" />
+            <element signature="e#3848#3849#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -935,8 +942,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3249#3250#0" expanded="true" />
-            <element signature="e#3301#3302#0" expanded="true" />
+            <element signature="e#3796#3797#0" expanded="true" />
+            <element signature="e#3848#3849#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -962,8 +969,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3249#3250#0" expanded="true" />
-            <element signature="e#3301#3302#0" expanded="true" />
+            <element signature="e#3796#3797#0" expanded="true" />
+            <element signature="e#3848#3849#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -989,8 +996,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3249#3250#0" expanded="true" />
-            <element signature="e#3301#3302#0" expanded="true" />
+            <element signature="e#3796#3797#0" expanded="true" />
+            <element signature="e#3848#3849#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1016,8 +1023,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3249#3250#0" expanded="true" />
-            <element signature="e#3301#3302#0" expanded="true" />
+            <element signature="e#3796#3797#0" expanded="true" />
+            <element signature="e#3848#3849#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1037,17 +1044,6 @@
         <state relative-caret-position="306">
           <caret line="22" column="1" lean-forward="false" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/MainPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="98" column="13" lean-forward="true" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
-          <folding>
-            <element signature="e#3249#3250#0" expanded="true" />
-            <element signature="e#3301#3302#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1095,27 +1091,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/NewBoebot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="38" column="20" lean-forward="true" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/GridProperties.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bluetooth/BTConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="66" column="33" lean-forward="false" selection-start-line="66" selection-start-column="33" selection-end-line="66" selection-end-column="33" />
-          <folding>
-            <element signature="e#1910#1911#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/GridProperties.java">
@@ -1130,9 +1108,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/GridPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+        <state relative-caret-position="561">
+          <caret line="37" column="21" lean-forward="true" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/MainPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="94" column="16" lean-forward="false" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="16" />
+          <folding>
+            <element signature="e#3796#3797#0" expanded="true" />
+            <element signature="e#3848#3849#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/NewBoebot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="38" column="20" lean-forward="true" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bluetooth/BTConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="87" column="17" lean-forward="true" selection-start-line="87" selection-start-column="17" selection-end-line="87" selection-end-column="17" />
+          <folding>
+            <element signature="e#1876#1877#0" expanded="true" />
+            <element signature="e#1910#1911#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

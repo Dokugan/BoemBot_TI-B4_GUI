@@ -84,6 +84,22 @@ public class MainPanel extends JFrame {
             this.btnVia1.setEnabled(false);
         });
 
+        btnGo.addActionListener(e -> {
+            getSelectedBB().sendData(254);
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e1) {
+                e1.printStackTrace();
+            }
+            getSelectedBB().sendData(Integer.parseInt(txtToX.getText()));
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e1) {
+                e1.printStackTrace();
+            }
+            getSelectedBB().sendData(Integer.parseInt(txtToY.getText()));
+        });
+
         menuBar = new JMenuBar();
         menuBoeBot = new JMenu("BoeBot");
         menuFile = new JMenu("Bestand");
