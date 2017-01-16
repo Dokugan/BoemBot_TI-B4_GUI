@@ -32,13 +32,13 @@ public class NewBoebot extends JFrame implements Runnable{
                 //@TODO implement home position
                 try {
                     Main.bots.add(new BTConnection(txtName.getText(), combPort.getSelectedItem().toString(), Integer.parseInt(txtPosX.getText()), Integer.parseInt(txtPosY.getText())));
+
                     Main.mp.fillSelectedBBBox();
                     NewBoebot.super.dispose();
                     Main.mp.gridPanel.repaint();
                 }catch(NullPointerException ex){
                     JOptionPane.showMessageDialog(null, "Velden niet juist ingevoerd");
                 }
-
             }
         });
 

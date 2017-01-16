@@ -15,6 +15,7 @@ public class MainPanel extends JFrame {
     private JPanel mainPanel;
     private JComboBox cboxSelectBB;
     private JButton btnAddVia;
+    private JButton btnDelVia;
     private JButton btnHome;
     private JButton btnM_Drive;
     private JButton btnGo;
@@ -31,8 +32,9 @@ public class MainPanel extends JFrame {
     public JTextField txtToX;
     public JTextField txtToY;
     private JPanel panelVia;
-    private JButton btnDelVia;
     public NewBoebot newBoebotPanel;
+
+    ArrayList<Coordinate> viaPoints = new ArrayList<>();
 
     MainPanel() {
         super("BoemBot control panel");
@@ -41,9 +43,7 @@ public class MainPanel extends JFrame {
             public void windowClosing(WindowEvent e) {
 
                 for (BTConnection b : Main.bots)
-                {
                     b.disconnect();
-                }
 
                 System.out.println("BT Connections terminated");
                 System.exit(0);
@@ -97,6 +97,17 @@ public class MainPanel extends JFrame {
         btnVia1.addActionListener((ActionEvent e) -> {
             this.gridPanel.btnViaPressed = true;
             this.btnVia1.setEnabled(false);
+        });
+
+        btnAddVia.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    viaPoints.add(new Coordinate(Integer.parseInt(txtViaX0.getText()), Integer.parseInt(txtViaY0.getText())));
+                } catch(IllegalArgumentException ex){
+
+                }
+            }
         });
 
         btnGo.addActionListener(e -> {
@@ -206,6 +217,18 @@ public class MainPanel extends JFrame {
         }
         return null;
     }
+}
+
+class Coordinate{
+    int x;
+    int y;
+
+     Coordinate(int x, int y){
+         this.x = x;
+         this.y = y;
+     }
+
+
 }
 
 

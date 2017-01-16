@@ -15,12 +15,12 @@ public class BTConnection {
     private String comPort;
     private String name;
 
-    public BTConnection(String name, String port, int xHome, int yHome)
+    public BTConnection(String name, String port, int Posx, int Posy)
     {
-        this.homePosx = xHome;
-        this.homePosy = yHome;
-        this.currentPosx = xHome;
-        this.currentPosy = yHome;
+        this.homePosx = Posx;
+        this.homePosy = Posy;
+        this.currentPosx = Posx;
+        this.currentPosy = Posy;
         this.name = name;
         this.comPort = port;
 
@@ -28,6 +28,25 @@ public class BTConnection {
         try {
             serialPort.openPort();//Open serial port
             serialPort.setParams(SerialPort.BAUDRATE_115200, SerialPort.DATABITS_8, SerialPort.STOPBITS_1, SerialPort.PARITY_NONE);//Set params. Also you can set params by this string: serialPort.setParams(9600, 8, 1, 0);
+            sendData(253);
+            try {
+                Thread.sleep(5);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            sendData(currentPosx);
+            try {
+                Thread.sleep(5);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            sendData(currentPosy);
+            try {
+                Thread.sleep(5);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            sendData(253);
         }
         catch (SerialPortException ex) {
             ex.printStackTrace();
