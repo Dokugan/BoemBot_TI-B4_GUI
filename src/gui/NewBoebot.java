@@ -89,7 +89,7 @@ public class NewBoebot extends JFrame implements Runnable{
     }
 
     public void run(){
-        //ListPorts.getPorts();
-        //combPort.setModel(new DefaultComboBoxModel(ports.toArray()));
+        ListPorts.getPorts();
+        combPort.setModel(new DefaultComboBoxModel(ports.toArray()));
     }
 }

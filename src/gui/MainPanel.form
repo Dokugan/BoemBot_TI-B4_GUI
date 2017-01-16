@@ -15,7 +15,7 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="4d5df" class="gui.GridPanel" binding="gridPanel">
+          <component id="38992" class="gui.GridPanel" binding="gridPanel">
             <constraints>
               <card name="Card1"/>
             </constraints>
@@ -85,7 +85,13 @@
                   <component id="6184" class="javax.swing.JButton" binding="btnAddVia">
                     <constraints/>
                     <properties>
-                      <text value="+"/>
+                      <text value="Add"/>
+                    </properties>
+                  </component>
+                  <component id="1de1f" class="javax.swing.JButton" binding="btnDelVia">
+                    <constraints/>
+                    <properties>
+                      <text value="Delete"/>
                     </properties>
                   </component>
                 </children>

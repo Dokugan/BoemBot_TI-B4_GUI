@@ -1,13 +1,11 @@
 package bluetooth;
 
 
-import gnu.io.*;
-import java.io.*;
+//import gnu.io.*;
+import jssc.*;
 
 public class BTConnection {
 
-    private InputStream in;
-    private OutputStream out;
     private SerialPort serialPort;
 
     private int currentPosx;
@@ -26,28 +24,13 @@ public class BTConnection {
         this.name = name;
         this.comPort = port;
 
-        try
-        {
-            CommPortIdentifier portIdentifier = CommPortIdentifier.getPortIdentifier(comPort);
-            CommPort commPort = portIdentifier.open(this.getClass().getName(), 2000);
-            SerialPort serialPort = (SerialPort) commPort;
-            serialPort.setSerialPortParams(115200, SerialPort.DATABITS_8, SerialPort.STOPBITS_1, SerialPort.PARITY_NONE);
-
-            in = serialPort.getInputStream();
-            out = serialPort.getOutputStream();
-
-            System.out.println("BT connection initialized");
+        serialPort = new SerialPort(comPort);
+        try {
+            serialPort.openPort();//Open serial port
+            serialPort.setParams(SerialPort.BAUDRATE_115200, SerialPort.DATABITS_8, SerialPort.STOPBITS_1, SerialPort.PARITY_NONE);//Set params. Also you can set params by this string: serialPort.setParams(9600, 8, 1, 0);
         }
-        catch(UnsupportedCommOperationException e){
-            e.printStackTrace();
-        } catch (PortInUseException e) {
-            e.printStackTrace();
-        } catch (NoSuchPortException e) {
-
-            e.printStackTrace();
-        } catch (IOException e) {
-
-            e.printStackTrace();
+        catch (SerialPortException ex) {
+            ex.printStackTrace();
         }
     }
 
@@ -84,8 +67,8 @@ public class BTConnection {
 
     public void sendData(int data) {
             try {
-                out.write(data);
-            } catch (IOException e) {
+                serialPort.writeByte((byte)data);
+            } catch (Exception e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
@@ -93,26 +76,22 @@ public class BTConnection {
 
     public int receiveData()
     {
-        try {
-            return in.read();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+            try {
+                byte data[] = serialPort.readBytes();
+                return data[0];
+            } catch (SerialPortException e) {
+                e.printStackTrace();
+            }
         return -1;
     }
 
     public void disconnect() {
         if (serialPort != null) {
             try {
-                // close the i/o streams.
-                out.close();
-                in.close();
-            } catch (IOException ex) {
-                // don't care
+                serialPort.closePort();
+            } catch (SerialPortException e) {
+                e.printStackTrace();
             }
-            // Close the port.
-            serialPort.close();
         }
     }
 }

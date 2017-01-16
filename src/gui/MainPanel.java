@@ -31,6 +31,7 @@ public class MainPanel extends JFrame {
     public JTextField txtToX;
     public JTextField txtToY;
     private JPanel panelVia;
+    private JButton btnDelVia;
     public NewBoebot newBoebotPanel;
 
     MainPanel() {
@@ -44,6 +45,7 @@ public class MainPanel extends JFrame {
                     b.disconnect();
                 }
 
+                System.out.println("BT Connections terminated");
                 System.exit(0);
             }
         };
