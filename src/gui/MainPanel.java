@@ -35,7 +35,20 @@ public class MainPanel extends JFrame {
 
     MainPanel() {
         super("BoemBot control panel");
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        WindowListener exitListener = new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+
+                for (BTConnection b : Main.bots)
+                {
+                    b.disconnect();
+                }
+
+                System.exit(0);
+            }
+        };
+
+        addWindowListener(exitListener);
 
         setMinimumSize(new Dimension(550, 410));
 
@@ -98,6 +111,25 @@ public class MainPanel extends JFrame {
                 e1.printStackTrace();
             }
             getSelectedBB().sendData(Integer.parseInt(txtToY.getText()));
+
+            if(txtViaX0.getText().length() == 0 && txtViaY0.getText().length() == 0) {
+                getSelectedBB().sendData(250);
+                try {
+                    Thread.sleep(10);
+                } catch (InterruptedException e1) {
+                    e1.printStackTrace();
+                }
+                getSelectedBB().sendData(250);
+            }
+            else {
+                getSelectedBB().sendData(Integer.parseInt(txtViaX0.getText()));
+                try {
+                    Thread.sleep(10);
+                } catch (InterruptedException e1) {
+                    e1.printStackTrace();
+                }
+                getSelectedBB().sendData(Integer.parseInt(txtViaY0.getText()));
+            }
         });
 
         menuBar = new JMenuBar();

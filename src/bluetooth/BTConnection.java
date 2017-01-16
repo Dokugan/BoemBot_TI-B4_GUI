@@ -6,17 +6,16 @@ import java.io.*;
 
 public class BTConnection {
 
-    InputStream in;
-    OutputStream out;
+    private InputStream in;
+    private OutputStream out;
+    private SerialPort serialPort;
 
-    int currentPosx;
-    int currentPosy;
-    int homePosx;
-    int homePosy;
-    String comPort;
-    String name;
-
-    private int oldData = -1;
+    private int currentPosx;
+    private int currentPosy;
+    private int homePosx;
+    private int homePosy;
+    private String comPort;
+    private String name;
 
     public BTConnection(String name, String port, int xHome, int yHome)
     {
@@ -42,13 +41,12 @@ public class BTConnection {
         catch(UnsupportedCommOperationException e){
             e.printStackTrace();
         } catch (PortInUseException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (NoSuchPortException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         }
     }
@@ -102,5 +100,19 @@ public class BTConnection {
             e.printStackTrace();
         }
         return -1;
+    }
+
+    public void disconnect() {
+        if (serialPort != null) {
+            try {
+                // close the i/o streams.
+                out.close();
+                in.close();
+            } catch (IOException ex) {
+                // don't care
+            }
+            // Close the port.
+            serialPort.close();
+        }
     }
 }
