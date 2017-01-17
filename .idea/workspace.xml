@@ -4,10 +4,8 @@
     <list default="true" id="8852883b-f742-4688-8c59-529168017bca" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bluetooth/BTConnection.java" afterPath="$PROJECT_DIR$/src/bluetooth/BTConnection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GridProperties.java" afterPath="$PROJECT_DIR$/src/gui/GridProperties.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GridPanel.java" afterPath="$PROJECT_DIR$/src/gui/GridPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/Main.java" afterPath="$PROJECT_DIR$/src/gui/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/MainPanel.java" afterPath="$PROJECT_DIR$/src/gui/MainPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/NewBoebot.java" afterPath="$PROJECT_DIR$/src/gui/NewBoebot.java" />
     </list>
     <ignored path="$PROJECT_DIR$/output/" />
     <ignored path="/test/BoemBot_TI-B4_GUI/" />
@@ -27,28 +25,28 @@
       <file leaf-file-name="NewBoebot.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/NewBoebot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="612">
               <caret line="43" column="17" lean-forward="true" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GridPanel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GridPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gui/GridPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="163" column="40" lean-forward="false" selection-start-line="163" selection-start-column="40" selection-end-line="163" selection-end-column="40" />
+            <state relative-caret-position="2706">
+              <caret line="194" column="70" lean-forward="false" selection-start-line="194" selection-start-column="70" selection-end-line="194" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+            <state relative-caret-position="493">
+              <caret line="34" column="56" lean-forward="true" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -67,10 +65,14 @@
       <file leaf-file-name="BTConnection.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bluetooth/BTConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="53" column="41" lean-forward="false" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
+            <state relative-caret-position="241">
+              <caret line="122" column="55" lean-forward="true" selection-start-line="122" selection-start-column="55" selection-end-line="122" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2228#2229#0" expanded="true" />
+                <element signature="e#2264#2265#0" expanded="true" />
+                <element signature="e#2301#2302#0" expanded="true" />
+                <element signature="e#2338#2339#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,15 +131,15 @@
         <option value="$PROJECT_DIR$/src/gui/NewBoebot.form" />
         <option value="$PROJECT_DIR$/src/gui/GridProperties.form" />
         <option value="$PROJECT_DIR$/src/gui/ManualDrive.java" />
-        <option value="$PROJECT_DIR$/src/gui/GridPanel.java" />
         <option value="$PROJECT_DIR$/src/gui/MainPanel1.form" />
         <option value="$PROJECT_DIR$/src/gui/MainPanel.form" />
         <option value="$PROJECT_DIR$/src/bluetooth/ListPorts.java" />
         <option value="$PROJECT_DIR$/src/gui/GridProperties.java" />
         <option value="$PROJECT_DIR$/src/gui/MainPanel.java" />
-        <option value="$PROJECT_DIR$/src/bluetooth/BTConnection.java" />
         <option value="$PROJECT_DIR$/src/gui/NewBoebot.java" />
+        <option value="$PROJECT_DIR$/src/bluetooth/BTConnection.java" />
         <option value="$PROJECT_DIR$/src/gui/Main.java" />
+        <option value="$PROJECT_DIR$/src/gui/GridPanel.java" />
       </list>
     </option>
   </component>
@@ -708,7 +710,14 @@
       <option name="project" value="LOCAL" />
       <updated>1484645487380</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="+ Added error massage when boebot failed to connect.&#10;+ Added basic receive data loop.&#10;&gt; Fixed remove boebot.">
+      <created>1484691118074</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1484691118074</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -759,7 +768,8 @@
     <MESSAGE value="+ Bluetooth is now being handled by another library." />
     <MESSAGE value="+ Listing ports now handled by new library" />
     <MESSAGE value="+ undone prev change" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ undone prev change" />
+    <MESSAGE value="+ Added error massage when boebot failed to connect.&#10;+ Added basic receive data loop.&#10;&gt; Fixed remove boebot." />
+    <option name="LAST_COMMIT_MESSAGE" value="+ Added error massage when boebot failed to connect.&#10;+ Added basic receive data loop.&#10;&gt; Fixed remove boebot." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1147,6 +1157,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/NewBoebot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="43" column="17" lean-forward="true" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/GridProperties.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -1157,34 +1175,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bluetooth/BTConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="53" column="41" lean-forward="false" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
+        <state relative-caret-position="241">
+          <caret line="122" column="55" lean-forward="true" selection-start-line="122" selection-start-column="55" selection-end-line="122" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2228#2229#0" expanded="true" />
+            <element signature="e#2264#2265#0" expanded="true" />
+            <element signature="e#2301#2302#0" expanded="true" />
+            <element signature="e#2338#2339#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/NewBoebot.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="43" column="17" lean-forward="true" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+        <state relative-caret-position="493">
+          <caret line="34" column="56" lean-forward="true" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/GridPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="163" column="40" lean-forward="false" selection-start-line="163" selection-start-column="40" selection-end-line="163" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        <state relative-caret-position="2706">
+          <caret line="194" column="70" lean-forward="false" selection-start-line="194" selection-start-column="70" selection-end-line="194" selection-end-column="70" />
           <folding />
         </state>
       </provider>

@@ -26,7 +26,14 @@ public class Main implements Runnable{
     public void run() {
         while(true) {
             for (BTConnection b : bots) {
-                b.receiveData();
+                if(b.receiveData(1)[0] == 254){
+                    b.setDirection(b.receiveData(0)[0]);
+                }
+                if(b.receiveData(1)[0] == 255){
+                    int[] coord = new int[2];
+                    coord = b.receiveData(2);
+                    b.setCurrentPos(coord[0], coord[1]);
+                }
             }
             try {
                 Thread.sleep(5);

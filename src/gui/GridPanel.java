@@ -162,8 +162,45 @@ public class GridPanel extends JPanel {
         for(BTConnection b : Main.bots)
         {
             g.setColor(new Color(3, 80, 0));
-            g2d.fillRoundRect(hSpacing * (b.getCurrentPosx() +1) - markerSize / 2, vSpacing * (b.getCurrentPosy() + 1) - markerSize /2, markerSize,markerSize,5,5);
 
+            if(b.getDirection() == 3){
+                int xPoints[] = {((b.getCurrentPosx() + 1) * vSpacing), ((b.getCurrentPosx() + 1) * vSpacing) + vSpacing / 10, ((b.getCurrentPosx() + 1) * vSpacing) - vSpacing / 10};
+                int yPoints[] = {((b.getCurrentPosy() + 1) * hSpacing + hSpacing / 2) + hSpacing / 8, ((b.getCurrentPosy() + 1) * hSpacing + hSpacing / 2) - hSpacing / 8, ((b.getCurrentPosy() + 1) * hSpacing + hSpacing / 2) - hSpacing / 8};
+                int n = 3;
+
+                Polygon p = new Polygon(xPoints, yPoints, n);
+                g.fillPolygon(p);
+            }
+
+            if(b.getDirection() == 1){
+                int xPoints[] = {((b.getCurrentPosx() + 1) * vSpacing), ((b.getCurrentPosx() + 1) * vSpacing) + vSpacing / 10, ((b.getCurrentPosx() + 1) * vSpacing) - vSpacing / 10};
+                int yPoints[] = {((b.getCurrentPosy() + 1) * hSpacing - hSpacing / 2) - hSpacing / 8, ((b.getCurrentPosy() + 1) * hSpacing - hSpacing / 2) + hSpacing / 8, ((b.getCurrentPosy() + 1) * hSpacing - hSpacing / 2) + hSpacing / 8};
+                int n = 3;
+
+                Polygon p = new Polygon(xPoints, yPoints, n);
+                g.fillPolygon(p);
+            }
+
+            if(b.getDirection() == 4){
+                int xPoints[] = {((b.getCurrentPosx() + 1) * hSpacing - hSpacing / 2) - hSpacing / 8, ((b.getCurrentPosx() + 1) * hSpacing - hSpacing / 2) + hSpacing / 8, ((b.getCurrentPosx() + 1) * hSpacing - hSpacing / 2) + hSpacing / 8};
+                int yPoints[] = {((b.getCurrentPosy() + 1) * vSpacing), ((b.getCurrentPosy() + 1) * vSpacing) + vSpacing / 10, ((b.getCurrentPosy() + 1) * vSpacing) - vSpacing / 10};
+                int n = 3;
+
+                Polygon p = new Polygon(xPoints, yPoints, n);
+                g.fillPolygon(p);
+            }
+
+            if(b.getDirection() == 2){
+                int xPoints[] = {((b.getCurrentPosx() + 1) * hSpacing + hSpacing / 2) + hSpacing / 8, ((b.getCurrentPosx() + 1) * hSpacing + hSpacing / 2) - hSpacing / 8, ((b.getCurrentPosx() + 1) * hSpacing + hSpacing / 2) - hSpacing / 8};
+                int yPoints[] = {((b.getCurrentPosy() + 1) * vSpacing), ((b.getCurrentPosy() + 1) * vSpacing) + vSpacing / 10, ((b.getCurrentPosy() + 1) * vSpacing) - vSpacing / 10};
+                int n = 3;
+
+                Polygon p = new Polygon(xPoints, yPoints, n);
+                g.fillPolygon(p);
+            }
+
+//            g2d.fillRoundRect(hSpacing * (b.getCurrentPosx() +1) - markerSize / 2, vSpacing * (b.getCurrentPosy() + 1) - markerSize /2, markerSize,markerSize,5,5);
+//
             g2d.setFont(new Font("Arial", Font.LAYOUT_LEFT_TO_RIGHT, hSpacing / 5));
             g2d.drawString(b.getName(), hSpacing * (b.getCurrentPosx() + 1) + markerSize / 2, vSpacing * (b.getCurrentPosy() + 1) + (int) (markerSize *1.5));
         }

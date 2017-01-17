@@ -3,7 +3,10 @@ package bluetooth;
 
 //import gnu.io.*;
 import jssc.*;
-import org.omg.CORBA.portable.ApplicationException;
+
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.IntBuffer;
 
 public class BTConnection extends Throwable{
 
@@ -15,6 +18,7 @@ public class BTConnection extends Throwable{
     private int homePosy;
     private String comPort;
     private String name;
+    private int direction = 2;
 
     public BTConnection(String name, String port, int Posx, int Posy)
     {
@@ -66,6 +70,23 @@ public class BTConnection extends Throwable{
         this.currentPosx = posX;
         this.currentPosy = posY;}
 
+    public void setCurrentPos(int posX, int posY, int dir)
+    {
+        this.currentPosx = posX;
+        this.currentPosy = posY;
+        this.direction = dir;
+    }
+
+    public void setDirection(int dir)
+    {
+        this.direction = dir;
+    }
+
+    public int getDirection()
+    {
+        return this.direction;
+    }
+
     public int getCurrentPosy() {
         return currentPosy;
     }
@@ -95,15 +116,19 @@ public class BTConnection extends Throwable{
             }
     }
 
-    public int receiveData()
+    public int[] receiveData(int bytes)
     {
             try {
-                byte data[] = serialPort.readBytes();
-                return data[0];
+                byte data[] = serialPort.readBytes(bytes);
+                    int[] datai = new int[data.length];
+                    for(int i = 0; i < bytes; i++){
+                        datai[i] = data[i] & 0xff;
+                    return datai;
+                }
             } catch (SerialPortException e) {
                 e.printStackTrace();
             }
-        return -1;
+        return null;
     }
 
     public void disconnect() {
