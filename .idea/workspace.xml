@@ -20,7 +20,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="NewBoebot.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NewBoebot.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/NewBoebot.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="675">
@@ -40,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListPorts.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ListPorts.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/bluetooth/ListPorts.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1175">
-              <caret line="47" column="18" lean-forward="true" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
+            <state relative-caret-position="400">
+              <caret line="28" column="2" lean-forward="false" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -596,12 +596,19 @@
       <option name="project" value="LOCAL" />
       <updated>1484592244226</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="+ Listing ports now handled by new library">
+      <created>1484645126642</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1484645126642</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -645,7 +652,8 @@
     <MESSAGE value="+ Added functionality for the to and via buttons" />
     <MESSAGE value="+ Added grid option pane where you can resize the grid" />
     <MESSAGE value="+ Bluetooth is now being handled by another library." />
-    <option name="LAST_COMMIT_MESSAGE" value="+ Bluetooth is now being handled by another library." />
+    <MESSAGE value="+ Listing ports now handled by new library" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ Listing ports now handled by new library" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1013,6 +1021,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/NewBoebot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="33" column="184" lean-forward="false" selection-start-line="33" selection-start-column="184" selection-end-line="33" selection-end-column="184" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/bluetooth/BTConnection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -1023,19 +1039,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bluetooth/ListPorts.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1175">
-          <caret line="47" column="18" lean-forward="true" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
+        <state relative-caret-position="400">
+          <caret line="28" column="2" lean-forward="false" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/NewBoebot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="33" column="184" lean-forward="false" selection-start-line="33" selection-start-column="184" selection-end-line="33" selection-end-column="184" />
-          <folding />
         </state>
       </provider>
     </entry>
