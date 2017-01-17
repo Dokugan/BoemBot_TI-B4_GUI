@@ -110,6 +110,13 @@ public class MainPanel extends JFrame {
             }
         });
 
+        btnStop.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                getSelectedBB().sendData(255);
+            }
+        });
+
         btnGo.addActionListener(e -> {
             getSelectedBB().sendData(254);
             try {
