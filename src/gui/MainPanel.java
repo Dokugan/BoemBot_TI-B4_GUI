@@ -190,7 +190,12 @@ public class MainPanel extends JFrame {
         JMenuItem itemDisconnectBB = new JMenuItem("Ontkoppel BoeBot");
         itemDisconnectBB.addActionListener((ActionEvent e) -> {
            BTConnection b = getSelectedBB();
+           b.disconnect();
+           System.out.println(b.getName() + " " + "Disconnected");
+           Main.bots.remove(b);
            b = null;
+           Main.mp.gridPanel.repaint();
+           Main.mp.fillSelectedBBBox();
         });
 
         menuBoeBot.add(itemAddBB);

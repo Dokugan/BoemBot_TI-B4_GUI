@@ -3,8 +3,9 @@ package bluetooth;
 
 //import gnu.io.*;
 import jssc.*;
+import org.omg.CORBA.portable.ApplicationException;
 
-public class BTConnection {
+public class BTConnection extends Throwable{
 
     private SerialPort serialPort;
 
@@ -50,6 +51,7 @@ public class BTConnection {
         }
         catch (SerialPortException ex) {
             ex.printStackTrace();
+            throw new RuntimeException();
         }
     }
 

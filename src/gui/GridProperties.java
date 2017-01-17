@@ -24,6 +24,7 @@ public class GridProperties extends JFrame{
                     Main.mp.gridPanel.hLines = Integer.parseInt(txtHeight.getText()) + 1;
                     Main.mp.gridPanel.vLines = Integer.parseInt(txtWidth.getText()) + 1;
                     Main.mp.gridPanel.repaint();
+                    GridProperties.super.dispose();
                 } catch (NullPointerException ex){
                     JOptionPane.showMessageDialog(null, "Velden niet juist ingevoerd");
                 }

@@ -2,6 +2,7 @@ package gui;
 
 import bluetooth.BTConnection;
 import bluetooth.ListPorts;
+import jssc.SerialPortException;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -36,8 +37,10 @@ public class NewBoebot extends JFrame implements Runnable{
                     Main.mp.fillSelectedBBBox();
                     NewBoebot.super.dispose();
                     Main.mp.gridPanel.repaint();
-                }catch(NullPointerException ex){
+                }catch(NullPointerException ex) {
                     JOptionPane.showMessageDialog(null, "Velden niet juist ingevoerd");
+                }catch(RuntimeException exp){
+                    JOptionPane.showMessageDialog(null, "Error tijdens toevoegen. Check status BoeBot.");
                 }
             }
         });
