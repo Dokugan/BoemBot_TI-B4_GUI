@@ -121,10 +121,11 @@ public class BTConnection extends Throwable{
             try {
                 byte data[] = serialPort.readBytes(bytes);
                     int[] datai = new int[data.length];
-                    for(int i = 0; i < bytes; i++){
+                    for(int i = 0; i < bytes; i++) {
                         datai[i] = data[i] & 0xff;
+                    }
+                    System.out.println(datai);
                     return datai;
-                }
             } catch (SerialPortException e) {
                 e.printStackTrace();
             }
