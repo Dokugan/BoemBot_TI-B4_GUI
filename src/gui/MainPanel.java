@@ -10,7 +10,7 @@ import java.util.ArrayList;
 /**
  * Created by Stijn on 23-12-2016.
  */
-public class MainPanel extends JFrame {
+public class MainPanel extends JFrame implements Runnable{
 
     private JPanel mainPanel;
     private JComboBox cboxSelectBB;
@@ -207,6 +207,9 @@ public class MainPanel extends JFrame {
         setContentPane(mainPanel);
         pack();
         setVisible(true);
+
+        Thread t = new Thread(this, "t1");
+        t.start();
     }
 
     public void fillSelectedBBBox(){
@@ -228,6 +231,18 @@ public class MainPanel extends JFrame {
             }
         }
         return null;
+    }
+
+    @Override
+    public void run() {
+        while(true) {
+            gridPanel.repaint();
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
 

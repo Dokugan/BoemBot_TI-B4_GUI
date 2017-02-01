@@ -107,9 +107,17 @@ public class GridPanel extends JPanel {
         });
     }
 
+    public static Color getRandomColor(){
+        int r = (int)(Math.random() * 255);
+        int g = (int)(Math.random() * 255);
+        int b = (int)(Math.random() * 255);
+        return new Color(r, g, b);
+    }
+
     @Override
     public void paintComponent(Graphics g)
     {
+        super.setBackground(getRandomColor());
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
 
@@ -125,18 +133,20 @@ public class GridPanel extends JPanel {
         //drawing horizontal lines
         for(int i = 1; i < hLines; i++){
             g2d.setStroke(new BasicStroke(3));
+            g2d.setColor(getRandomColor());
             g2d.drawLine(posx, posy + (vSpacing * i), posx + width, posy + (vSpacing * i));
         }
 
         //drawing vertical lines
         for(int i = 1; i < vLines; i++){
             g2d.setStroke(new BasicStroke(3));
+            g2d.setColor(getRandomColor());
             g2d.drawLine(posx + (hSpacing * i), posy, posx + (hSpacing * i), posy + height);
         }
 
         int markerSize = hSpacing / 8;
 
-        //drawing selected to position
+        //drawing selected "to" position
         if(drawSelectedTo){
             g.setColor(Color.BLUE);
             g.fillOval(hSpacing * (selectedToX + 1) - markerSize / 2, vSpacing * (selectedToY + 1) - markerSize / 2, markerSize, markerSize);
@@ -164,8 +174,8 @@ public class GridPanel extends JPanel {
             g.setColor(new Color(3, 80, 0));
 
             if(b.getDirection() == 3){
-                int xPoints[] = {((b.getCurrentPosx() + 1) * vSpacing), ((b.getCurrentPosx() + 1) * vSpacing) + vSpacing / 10, ((b.getCurrentPosx() + 1) * vSpacing) - vSpacing / 10};
-                int yPoints[] = {((b.getCurrentPosy() + 1) * hSpacing + hSpacing / 2) + hSpacing / 8, ((b.getCurrentPosy() + 1) * hSpacing + hSpacing / 2) - hSpacing / 8, ((b.getCurrentPosy() + 1) * hSpacing + hSpacing / 2) - hSpacing / 8};
+                int xPoints[] = {((b.getCurrentPosx() + 1) * hSpacing), ((b.getCurrentPosx() + 1) * hSpacing) + hSpacing / 10, ((b.getCurrentPosx() + 1) * hSpacing) - hSpacing / 10};
+                int yPoints[] = {((b.getCurrentPosy() + 1) * vSpacing + vSpacing / 2) + vSpacing / 8, ((b.getCurrentPosy() + 1) * vSpacing + vSpacing / 2) - vSpacing / 8, ((b.getCurrentPosy() + 1) * vSpacing + vSpacing / 2) - vSpacing / 8};
                 int n = 3;
 
                 Polygon p = new Polygon(xPoints, yPoints, n);
@@ -173,8 +183,8 @@ public class GridPanel extends JPanel {
             }
 
             if(b.getDirection() == 1){
-                int xPoints[] = {((b.getCurrentPosx() + 1) * vSpacing), ((b.getCurrentPosx() + 1) * vSpacing) + vSpacing / 10, ((b.getCurrentPosx() + 1) * vSpacing) - vSpacing / 10};
-                int yPoints[] = {((b.getCurrentPosy() + 1) * hSpacing - hSpacing / 2) - hSpacing / 8, ((b.getCurrentPosy() + 1) * hSpacing - hSpacing / 2) + hSpacing / 8, ((b.getCurrentPosy() + 1) * hSpacing - hSpacing / 2) + hSpacing / 8};
+                int xPoints[] = {((b.getCurrentPosx() + 1) * hSpacing), ((b.getCurrentPosx() + 1) * hSpacing) + hSpacing / 10, ((b.getCurrentPosx() + 1) * hSpacing) - hSpacing / 10};
+                int yPoints[] = {((b.getCurrentPosy() + 1) * vSpacing - vSpacing / 2) - vSpacing / 8, ((b.getCurrentPosy() + 1) * vSpacing - vSpacing / 2) + vSpacing / 8, ((b.getCurrentPosy() + 1) * vSpacing - vSpacing / 2) + vSpacing / 8};
                 int n = 3;
 
                 Polygon p = new Polygon(xPoints, yPoints, n);

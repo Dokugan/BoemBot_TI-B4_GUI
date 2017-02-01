@@ -14,14 +14,7 @@
           <preferredSize width="700" height="500"/>
         </properties>
         <border type="none"/>
-        <children>
-          <component id="38992" class="gui.GridPanel" binding="gridPanel">
-            <constraints>
-              <card name="Card1"/>
-            </constraints>
-            <properties/>
-          </component>
-        </children>
+        <children/>
       </grid>
       <grid id="e0" layout-manager="BorderLayout" hgap="0" vgap="0">
         <constraints border-constraint="East"/>

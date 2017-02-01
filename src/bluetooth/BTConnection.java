@@ -7,8 +7,9 @@ import jssc.*;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.IntBuffer;
+import java.util.Arrays;
 
-public class BTConnection extends Throwable{
+public class BTConnection extends Throwable implements SerialPortEventListener{
 
     private SerialPort serialPort;
 
@@ -116,26 +117,46 @@ public class BTConnection extends Throwable{
             }
     }
 
-    public int[] receiveData(int bytes)
-    {
-            try {
-                byte data[] = serialPort.readBytes(bytes);
-                    int[] datai = new int[data.length];
-                    for(int i = 0; i < bytes; i++) {
-                        datai[i] = data[i] & 0xff;
-                    }
-                    System.out.println(datai);
-                    return datai;
-            } catch (SerialPortException e) {
-                e.printStackTrace();
-            }
-        return null;
-    }
+//    public int[] receiveData(int bytes)
+//    {
+//            try {
+//                int data[] = new int[bytes];
+//                try {
+//                    data = serialPort.readIntArray(bytes, 5);
+//                } catch (SerialPortTimeoutException e) {
+//                    e.printStackTrace();
+//                }
+//                System.out.println(data);
+//                return data;
+//            } catch (SerialPortException e) {
+//                e.printStackTrace();
+//            }
+//        return null;
+//    }
 
     public void disconnect() {
         if (serialPort != null) {
             try {
                 serialPort.closePort();
+            } catch (SerialPortException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void serialEvent(SerialPortEvent event) {
+        if(event.isRXCHAR()) {
+            try {
+                if(event.getEventValue() == 2){
+                    int data[] = serialPort.readIntArray(2);
+                    this.direction = data[1];
+                }
+                if(event.getEventValue() == 3){
+                    int data[] = serialPort.readIntArray(3);
+                    System.out.println(Arrays.toString(data));
+                    setCurrentPos(data[1], data[2]);
+                }
             } catch (SerialPortException e) {
                 e.printStackTrace();
             }
